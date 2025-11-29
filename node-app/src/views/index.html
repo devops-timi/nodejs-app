@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My NodeJS DevOps App</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background: #f7f7f7;
+        }
+        h1 {
+            color: #333;
+        }
+        .box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 500px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0060cc;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="box">
+        <h1>Welcome to My NodeJS DevOps App</h1>
+        <p>This app is perfect for practicing CI/CD, Docker, Jenkins, GitHub Actions, Kubernetes, EC2, and more.</p>
+
+        <button onclick="getInfo()">Get App Info (API)</button>
+        <pre id="output"></pre>
+    </div>
+
+    <script>
+        function getInfo() {
+            fetch("/api/info")
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById("output").textContent = JSON.stringify(data, null, 2);
+                });
+        }
+    </script>
+
+</body>
+</html>
+

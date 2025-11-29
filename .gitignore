@@ -1,0 +1,19 @@
+# Node.js
+node-app/node_modules/
+node-app/package-lock.json
+
+# If package.json should NOT be versioned (usually it SHOULD be)
+# node-app/package.json
+
+# Ansible
+ansible/inventory.ini
+
+# Terraform
+terraform/*.tfstate
+terraform/*.tfstate.*
+terraform/.terraform/
+terraform/.terraform.lock.hcl
+
+# SSH keys / sensitive files
+*.pem
+*.key
